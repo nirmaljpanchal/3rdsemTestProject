@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <% include head %>
+
+</head>
+<body>
+   <% include menu %>
+    <div class="container body-content">
+        
+
+
+<div class="container">
+    <h2>RPM</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>RPM</th>
+            </tr>
+        </thead>
+		<tbody>
+		<%RpmlistModel.Data.forEach(function(item) { %>
+        <tr>
+		<td>
+		<%= item.rpm %></td>
+		
+		</tr>
+		<% }); %>
+		
+		</tbody>
+            
+            
+    </table>
+</div>
+
+
+        <hr />
+    
+	 <% include footer %>
+
+
+</body>
+</html>

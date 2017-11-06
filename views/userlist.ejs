@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <% include head %>
+
+</head>
+<body>
+   <% include menu %>
+<div class="row">
+   <% include aside %>
+	<section class="content">
+		<h2>Users</h2>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Username</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Vin</th>
+					<th>GCM</th>
+					<th>Send Notification</th>
+				</tr>
+			</thead>
+			<tbody>
+			<%UserlistModel.Data.forEach(function(item) { %>
+			<tr>
+			<td>
+			<%= item.username %></td>
+			<td><%= item.email %></td>
+			<td><%= item.phone %></td>
+			<td><%= item.vin %></td>
+			<td>--</td>
+			<td><a href="javascript:void(0)" target="_blank" onclick="sendNotify('<%= item.username %>')">Notify</a></td>
+			</tr>
+			<% }); %>
+			
+			</tbody>
+				
+				
+		</table>
+	</section>
+	<script>
+		function sendNotify(username)
+		{
+			$.get('/Home/sendNotification?userid='+username, function (data) {
+				alert(data);
+			});
+		}
+	</script>
+
+</div>
+        <hr />
+    
+	 <% include footer %>
+
+
+</body>
+</html>
