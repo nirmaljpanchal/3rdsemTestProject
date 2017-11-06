@@ -4,9 +4,17 @@ const userlist = require('../models/user');
 const rpmlist = require('../models/rpm');
 var FCM = require('fcm-push');
 
+function ensureAuthenticated(req,res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }else{
+        // req.flash('error_msg', 'You are not logged in');
+        res.redirect('/account/login');
+    }
+}
 //npm install fcm-push
 //get a list  from db
-router.get('/userlist', function (req, res, next) {
+router.get('/userlist',ensureAuthenticated, function (req, res, next) {
     var data = {
         "Data": ""
     };
@@ -20,7 +28,7 @@ router.get('/userlist', function (req, res, next) {
     //res.render('userlist');
 });
 
-router.get('/rpmlist', function (req, res, next) {
+router.get('/rpmlist',ensureAuthenticated, function (req, res, next) {
     var data = {
         "Data": ""
     };

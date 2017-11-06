@@ -276,6 +276,43 @@ a:hover, a:focus {
   color: #478ac1;
   text-decoration: none; }
 
+a.dark {
+  color: white; }
+
+a.dark:hover, a.dark:focus {
+  color: #0e4e68;
+  text-decoration: none; }
+
+/* ==========================================================================
+Login
+========================================================================== */
+section.login-form {
+  width: 100vw;
+  height: 100vh;
+  display: table;
+  padding: 25vh 0;
+  background: #478ac1;
+  text-align: center; }
+  section.login-form img.logo {
+    margin: 0 0 30px 10px;
+    width: 200px; }
+  section.login-form .lost-lbl {
+    display: block;
+    margin: 20px auto 0 auto; }
+  section.login-form form {
+    width: 300px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+    border: #bebebe solid 1px;
+    background: #f0f0f0;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; }
+    section.login-form form label {
+      text-align: left; }
+    section.login-form form .right-btn {
+      float: right; }
+
 /* ==========================================================================
 Desktop
 ========================================================================== */
