@@ -1,35 +1,84 @@
 ﻿<!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en" class="no-js">
 <head>
     <% include head %>
 
 </head>
 <body>
    <% include menu %>
-<div class="row">
+<div id="wrapper">
    <% include aside %>
-	<section class="content">
-		<h2 class="bd-title">Users</h2>
-		<table class="table table-bordered">
+   <div id="page-content-wrapper">
+	<div class="container-fluid">
+
+		<div class="row title">
+			<div class="col-9 text-truncate">
+				<h3>List of Users</h3>
+			</div>
+			<div class="col-3 text-truncate">
+				<form class="navbar-form" role="search">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search" aria-label="Search for..." aria-describedby="basic-addon2">
+						<span class="input-group-addon" id="basic-addon2"><i class="material-icons">search</i></span>
+					</div>
+				</form>
+			</div>
+		</div>
+		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Username</th>
-					<th>Email</th>
-					<th>Phone</th>
-					<th>Vin</th>
-					<th>GCM</th>
-					<th>Send Notification</th>
+					<th scope="col">#</th>
+					<th scope="col">Username</th>
+					<th scope="col">Email</th>
+					<th scope="col">Phone</th>
+					<th scope="col">VIN</th>
+					<th scope="col"></th>
+					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
 			<%UserlistModel.Data.forEach(function(item) { %>
 			<tr>
+				<td></td>
 			<td>
 			<%= item.username %></td>
 			<td><%= item.email %></td>
 			<td><%= item.phone %></td>
 			<td><%= item.vin %></td>
-			<td>--</td>
+			<td class="align-right">
+					<!-- Dropdown Menu -->
+					<div class="input-group">
+						<div class="input-group-btn">
+							<button type="button" class="btn-primary" aria-label="Edit">
+								<i class="material-icons">mode_edit</i>
+							</button>
+							<button type="button" class="btn-primary" aria-label="Delete">
+								<i class="material-icons">delete_forever</i>
+							</button>
+							<button type="button" class="btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="material-icons">more_vert</i>
+							</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">
+									<button type="button" class="btn-primary" aria-label="Edit">
+										<i class="material-icons">mode_edit</i> <span>Edit</span>
+									</button>
+								</a>
+								<a class="dropdown-item" href="#">
+									<button type="button" class="btn-primary" aria-label="Delete">
+										<i class="material-icons">delete_forever</i> <span>Delete</span>
+									</button>
+								</a>
+								<div role="separator" class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Another link</a>
+							</div>
+						</div>
+					</div>
+				</td>
 			<td><a href="javascript:void(0)" target="_blank" onclick="sendNotify('<%= item.username %>')">Notify</a></td>
 			</tr>
 			<% }); %>
@@ -38,7 +87,6 @@
 				
 				
 		</table>
-	</section>
 	<script>
 		function sendNotify(username)
 		{
@@ -51,7 +99,16 @@
 </div>
     
 	 <% include footer %>
+	</div>
+	<!-- /#page-content-wrapper -->
 
+</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="/js/popper.js"></script>
+	<script src="/js/bootstrap-material-design.min.js"></script>
+	<script src="/js/main.js"></script>
+	<!-- <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script> -->
 
 </body>
 </html>

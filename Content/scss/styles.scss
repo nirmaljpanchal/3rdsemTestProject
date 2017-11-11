@@ -270,6 +270,112 @@ a:hover, a:focus {
     color: $id;
     text-decoration: none;
 }
+a.dark {
+    color: white;
+}
+a.dark:hover, a.dark:focus {
+    color: $idDark;
+    text-decoration: none;
+}
+
+.row.title {
+    margin: 30px 0;
+    padding: 15px 0;
+    // border-bottom: $gray solid 1px;
+}
+
+/* ==========================================================================
+Affix Header
+========================================================================== */
+.affix {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    height: 65px;
+}
+// /* fixed to top styles */
+// .affix.navbar {
+//     background-color: #333;
+// }
+// .affix.navbar .nav-item>a, 
+// .affix.navbar .navbar-brand {
+//       color: #fff;
+// }
+
+/* ==========================================================================
+Dropdown Events for Table list
+========================================================================== */
+table.table {
+    button {
+        background: none;
+        border: none;
+        color: $grayDark;
+        &:hover {
+            background: none;
+            color: $id;
+        }
+        span {
+            vertical-align: super;
+        }
+    }
+    .show>.dropdown-toggle {
+        background: none;
+        border: none;
+        color: $id;
+    }
+    th.align-right, td.align-right {
+        text-align: right;
+        .input-group {
+            display: inline-block;
+            width: auto !important;
+        }
+    }
+}
+
+/* ==========================================================================
+Login
+========================================================================== */
+section.login-form {
+    width: 100vw;
+    height: 100vh;
+    display: table;
+    padding: 20vh 0;
+    background: $id;
+    text-align: center;
+    img.logo {
+        margin: 0 0 30px 10px;
+        width: 200px;
+    }
+    .lost-lbl {
+        display: block;
+        margin: 20px auto 0 auto;
+    }
+    form {
+        width: 300px;
+        margin: 0 auto;
+        text-align: left;
+        padding: 10px 30px 30px 30px;
+        border: $grayLight solid 1px;
+        background: $grayLight2;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        .checkbox {
+            label {
+                font-size: 14px;
+                margin: 6px;
+                text-align: left;
+            }
+        }
+        label {
+            text-align: left;
+        }
+        .right-btn {
+            float: right;
+        }
+    }
+}
 
 
 /* ==========================================================================
@@ -282,68 +388,111 @@ Desktop
     ========================================================================== */
     header {
         background: $id;
-        padding: 10px;
+        padding: 10px 15px;
         width: 100%;
         height: 65px;
-        img.logo {
-            width: 160px;
-            height: auto;
-            margin: 10px 5px;
-        }
-        nav.desktop {
-            float: right;
-            margin: 3px;
-            padding: 0;
-            ul {
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                li {
-                    list-style: none;
-                    display: inline-block;
-                    padding: 5px 10px;
-                    border-right: $idDarkAlpha solid 1px;
-                    text-align: center;
-                    &:last-child {
-                        border-right: none;
-                    }
-                    .glyphicon {
-                        color: $gray;
-                    }
-                    a {
-                        -webkit-transition-timing-function: ease-in-out;
-                        transition-timing-function: ease-in-out;
-                        -webkit-transition-duration: 300ms;
-                        transition-duration: 300ms;
-                        color: white;
-                        &:hover {
-                            color: $idDark;
+        .col {
+            display: block;
+            float: left;
+            &:nth-child(1) {
+                width: 45px;
+                padding: 0;
+            }
+            &:nth-child(2) {
+                width: 180px;
+            }
+            &:nth-child(3) {
+                width: 300px;
+                margin-left: 10px;
+                // input[type=text] {
+                //     width: 100px;
+                //     -webkit-transition: width 0.4s ease-in-out;
+                //     transition: width 0.4s ease-in-out;
+                //     background: #f2f2f2;
+                //     border-radius: 5px;
+                //     height: 36px;
+                //     margin: 5px 0 0 0;
+                //     padding: 0 5px;
+                // }
+                // button {
+                //     border: none;
+                //     background: none;
+                //     padding: 11px;
+                //     margin: 0;
+                // }
+                // i {
+                //     color: white;
+                // }
+            }
+            &:nth-child(4) {
+                width: auto;
+                float: right;
+            }
+            img.logo {
+                width: 160px;
+                height: auto;
+                margin: 10px 5px;
+                vertical-align: top;
+            }
+            .icon-menu {
+                display: inline-block;
+                i {
+                    color: #ffffff;
+                    font-size: 44px;
+                }
+            }
+            nav.desktop {
+                float: right;
+                margin: 3px;
+                padding: 0;
+                ul {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    li {
+                        list-style: none;
+                        display: inline-block;
+                        padding: 5px 10px;
+                        border-right: $idDarkAlpha solid 1px;
+                        text-align: center;
+                        &:last-child {
+                            border-right: none;
                         }
-                        img {
-                            width: 30px;
-                            display: inline-block;
+                        .glyphicon {
+                            color: $gray;
                         }
-                        h1 {
-                            display: inline-block;
-                            font-size: 14px;
-                            margin: 0 0 0 10px;
+                        a {
+                            -webkit-transition-timing-function: ease-in-out;
+                            transition-timing-function: ease-in-out;
+                            -webkit-transition-duration: 300ms;
+                            transition-duration: 300ms;
+                            color: white;
+                            &:hover {
+                                color: $idDark;
+                            }
+                            img {
+                                width: 30px;
+                                display: inline-block;
+                            }
+                            h1 {
+                                display: inline-block;
+                                font-size: 14px;
+                                margin: 0 0 0 10px;
+                            }
                         }
                     }
                 }
             }
-        }
-        nav.mobile {
-            display: none;
         }
     }
     
     /* ==========================================================================
     Sidebar
     ========================================================================== */
-    aside#main {
+    aside#sidebar-wrapper {
         display: block;
         nav {
-            width: 200px;
+            width: 225px;
             margin: 0;
             padding: 0;
             float: left;
@@ -355,9 +504,9 @@ Desktop
                 li {
                     list-style: none;
                     display: block;
-                    padding: 20px 0;
+                    padding: 20px 10px;
                     border-bottom: $grayLight2 solid 1px;
-                    text-align: center;
+                    text-align: left;
                     background: white;
                     -webkit-transition-timing-function: ease-in-out;
                     transition-timing-function: ease-in-out;
@@ -374,11 +523,13 @@ Desktop
                     a {
                         display: block;
                         img {
-                            width: 70px;
+                            width: 60px;
+                            display: inline-block;
                         }
                         h1 {
                             font-size: 14px;
-                            margin: 20px 0 0 0;
+                            margin: 20px 0 0 10px;
+                            display: inline-block;
                         }
                     }
                 }
@@ -392,7 +543,7 @@ Desktop
     footer {
         width: 100%;
         padding: 10px;
-        margin: 0;
+        margin: 100px 0 0 0;
         display: block;
         border-top: $grayLight2 solid 1px;
         p {
@@ -401,19 +552,8 @@ Desktop
         }
         .dev {
             padding: 15px;
-            margin: 0;
+            margin: 0 auto;
         }
-    }
-
-    /* ==========================================================================
-    Content
-    ========================================================================== */
-    section.content {
-        width: auto;
-        height: 500px;
-        display: flex;
-        padding: 50px;
-        background: white;
     }
 
 }
@@ -435,30 +575,64 @@ Mobile
         background: $id;
         padding: 0;
         width: 100%;
-        // height: 65px;
-        img.logo {
-            width: 160px;
-            height: auto;
-            margin: 20px 15px;
-        }
-        nav.desktop {
-            display: none;
-        }
-        nav.mobile {
+        height: 65px;
+        .col {
             display: block;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            border-bottom: $grayLight2 solid 1px;
-            ul {
+            float: left;
+            padding: 10px 0;
+            &:nth-child(1) {
+                width: 20%;
+                padding-left: 15px;
+            }
+            &:nth-child(2) {
+                width: 60%;
+                text-align: center;
+                padding-left: 10px;
+            }
+            &:nth-child(3) {
+                width: 20%;
+                float: right;
+            }
+            img.logo {
+                width: 160px;
+                height: auto;
+                margin: 10px 0;
+                vertical-align: top;
+            }
+            .icon-menu {
+                display: inline-block;
+                i {
+                    color: #ffffff;
+                    font-size: 44px;
+                }
+            }
+            nav.desktop {
                 display: none;
+            }
+        }
+
+
+    }
+
+    /* ==========================================================================
+    Sidebar
+    ========================================================================== */
+    aside#sidebar-wrapper {
+        display: block;
+        border-right: $grayLight2 solid 1px;
+        nav {
+            width: 225px;
+            margin: 0 0 65px 0;
+            padding: 0;
+            float: left;
+            ul {
                 width: 100%;
                 height: 100%;
                 margin: 0;
                 li {
                     list-style: none;
                     display: block;
-                    padding: 15px;
+                    padding: 20px 15px;
                     border-bottom: $grayLight2 solid 1px;
                     text-align: left;
                     background: white;
@@ -477,38 +651,20 @@ Mobile
                     a {
                         display: block;
                         img {
-                            width: 10vw;
-                            height: 10vw;
+                            width: 60px;
+                            height: 60px;
                             display: inline-block;
-                            margin: 0 0 0 30px;
+                            margin: 0;
                         }
                         h1 {
                             display: inline-block;
                             font-size: 14px;
-                            margin: 0 0 0 20px;
+                            margin: 0 0 0 10px;
                         }
                     }
                 }
             }
-            #toggle-menu {
-                position: absolute;
-                display: block;
-                top: 15px;
-                right: 15px;
-                img {
-                    width: 40px;
-                    height: 40px;
-                }
-
-            }
         }
-    }
-
-    /* ==========================================================================
-    Sidebar
-    ========================================================================== */
-    aside#main {
-        display: none;
     }
 
     /* ==========================================================================
@@ -517,22 +673,12 @@ Mobile
     footer {
         padding: 0;
         .dev {
-            padding: 2.5vw;
-            margin: 0;
-            font-size: 3vw;
+            width: 100%;
+            margin: 12vw 0 0 0;
+            padding: 3.5vw 0 0 0;
+            font-size: 4vw;
             border-top: $grayLight solid 1px;
         }
     }
-
-    /* ==========================================================================
-    Content
-    ========================================================================== */
-    section.content {
-        width: 100%;
-        display: block;
-        padding: 5vw 10vw;
-        background: white;
-    }
-
 
 }
