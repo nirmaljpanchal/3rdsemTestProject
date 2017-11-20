@@ -5,23 +5,23 @@ role:[
 			menu:[
 				{
 				name:"User List"
-				image: "url"
-				link:""
+				link: "/home/userlist"
+				image:"/img/icon_menu_summary.png"
 				},
 				{
 				name:"RPM List"
-				image: "url"
-				link:""
+				link: "/home/rpmlist"
+				image:"/img/icon_menu_diagnostic.png"
 				}
 			]
 		},
 		{
-			rolename:"admin"
+			rolename:"User"
 			menu:[
 				{
-				name:"User List"
-				image: "url"
-				link:""
+				name:"RPM"
+				link: "/home/rpmlist"
+				image:"/img/icon_menu_diagnostic.png"
 				}
 			]
 		}

@@ -73,6 +73,7 @@ app.use(expressValidator({
 app.use(flash());
 
 // Global Vars
+app.use('/', accountRoutes);
 app.use('/api', routes);
 app.use('/api/users', users);
 app.use('/home', appRoutes);

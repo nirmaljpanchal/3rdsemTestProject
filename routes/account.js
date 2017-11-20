@@ -43,7 +43,10 @@ passport.use(new LocalStrategy(
       req.flash('success_msg', 'You are logged out');
       res.redirect('/account/login');
   });
-
+router.get('/', function (req, res, next) {
+    //console.log("");
+    res.render('login',{message: req.flash('error'),success_msg: req.flash('success_msg')});
+});
 router.get('/login', function (req, res, next) {
     //console.log("");
     res.render('login',{message: req.flash('error'),success_msg: req.flash('success_msg')});
