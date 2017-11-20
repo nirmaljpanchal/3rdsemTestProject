@@ -1,0 +1,29 @@
+{
+role:[
+		{
+			rolename:"admin"
+			menu:[
+				{
+				name:"User List"
+				image: "url"
+				link:""
+				},
+				{
+				name:"RPM List"
+				image: "url"
+				link:""
+				}
+			]
+		},
+		{
+			rolename:"admin"
+			menu:[
+				{
+				name:"User List"
+				image: "url"
+				link:""
+				}
+			]
+		}
+	]
+}
