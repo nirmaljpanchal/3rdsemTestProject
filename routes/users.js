@@ -45,8 +45,8 @@ router.post('/register', function(req, res){
     req.checkBody('password', 'Password is required').notEmpty();
     req.checkBody('password2', 'Password2 is required').equals(req.body.password);
     req.checkBody('phone', 'Phone is required').notEmpty();
-    req.checkBody('vin', 'vin is required').notEmpty();
-    req.checkBody('gcm', 'gcm is required').notEmpty();
+    //req.checkBody('vin', 'vin is required').notEmpty();
+    //req.checkBody('gcm', 'gcm is required').notEmpty();
 
     var errors = req.validationErrors();
 

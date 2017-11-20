@@ -23,11 +23,11 @@ const openxcSchema = new Schema({
     },
     vin:{
         type:String,
-        required : [true,'vin field is required']
+        //required : [true,'vin field is required']
     },
     gcm:{
         type: String,
-        required : [true,'gcm field is required']
+        //required : [true,'gcm field is required']
     }
     
 
