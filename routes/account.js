@@ -11,7 +11,7 @@ passport.use(new LocalStrategy(
             if(!user){
                 return done(null, false, {message: 'Invalid username or password'});
             }
-
+         
         User.comparePassword(password, user.password, function(err, isMatch){
             if(err) throw err;
             if(isMatch){
@@ -101,7 +101,9 @@ router.post('/register', function(req, res){
         password : password,
         gcm : gcm,
         vin : vin,
-        phone : phone 
+        phone : phone ,
+        isactive: true,
+        role:"user" 
     });
     if(errors){
         //res.send(errors)

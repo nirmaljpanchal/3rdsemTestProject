@@ -18,7 +18,7 @@ router.get('/userlist',ensureAuthenticated, function (req, res, next) {
     var data = {
         "Data": ""
     };
-    userlist.find({}).then(function (rows) {
+    userlist.find({role:"user"}).then(function (rows) {
         data["Data"] = rows;
         //res.send(data);
         //console.log(data);

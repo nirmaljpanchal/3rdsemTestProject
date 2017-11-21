@@ -28,6 +28,14 @@ const openxcSchema = new Schema({
     gcm:{
         type: String,
         //required : [true,'gcm field is required']
+    },
+    isactive:{
+        type: Boolean,
+        //required : [true,'gcm field is required']
+    },
+    role:{
+        type: String,
+        //required : [true,'gcm field is required']
     }
     
 

@@ -16,7 +16,7 @@ role:[
 			]
 		},
 		{
-			rolename:"User"
+			rolename:"user"
 			menu:[
 				{
 				name:"RPM"
