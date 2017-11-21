@@ -15,14 +15,18 @@ function ensureAuthenticated(req,res, next){
 //npm install fcm-push
 //get a list  from db
 router.get('/userlist',ensureAuthenticated, function (req, res, next) {
+    if(req.user.role=="user")
+    {
+        res.redirect('/home/rpmlist');
+    }
     var data = {
         "Data": ""
     };
     userlist.find({role:"user"}).then(function (rows) {
         data["Data"] = rows;
         //res.send(data);
-        //console.log(data);
-        res.render('userlist', { UserlistModel: data });
+        //console.log(req.user);
+        res.render('userlist', { UserlistModel: data,user:req.user });
         
     })
     //res.render('userlist');
@@ -36,7 +40,7 @@ router.get('/rpmlist',ensureAuthenticated, function (req, res, next) {
         data["Data"] = rows;
         //res.send(data);
         console.log(data);
-        res.render('rpmlist', { RpmlistModel: data });
+        res.render('rpmlist', { RpmlistModel: data ,user:req.user });
         
     })
     //res.render('userlist');
