@@ -24,6 +24,7 @@
     "passport": "*",
     "passport-http": "*",
     "passport-local": "*",
-	"fcm-push": "*"
+	"fcm-push": "*",
+	"ejs": "*"
   }
 }
