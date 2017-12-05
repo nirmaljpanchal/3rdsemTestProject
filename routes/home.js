@@ -34,19 +34,20 @@ router.get('/userlist',ensureAuthenticated, function (req, res, next) {
 
 router.get('/userDashboard',ensureAuthenticated, function (req, res, next) {
     
-    userlist.find({username:req.params.id}).then(function (row) {
-        data = row;
+    userlist.find({username:req.query.id}).then(function (row) {
+        data = row[0];
         var currentdt=new Date();
         var minutagodt=new Date(currentdt - 60000);
         
-        if(row.isActiveAt>minutagodt && row.isActiveAt<currentdt)
+        if(data.isActiveAt>minutagodt && data.isActiveAt<currentdt)
         {
-            row.isActive=true;
+            data.isActive=true;
         }
         else
         {
-            row.isActive=false;
+            data.isActive=false;
         }
+        console.log(data.isActive);
         res.render('userDashboard', { UserModel: data,user:req.user });
         
     })

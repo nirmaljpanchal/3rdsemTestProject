@@ -133,6 +133,7 @@ router.get('/:id', function (req, res, next) {
 });
 
 router.put('/isActive/:id', function (req, res) {
+    req.body.isActiveAt=new Date();
     User.findByIdAndUpdate({ _id: req.params.id }, req.body).then(function () {
         User.findOne({ _id: req.params.id }).then(function (rows) {
             res.send(rows)

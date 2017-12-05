@@ -35,7 +35,7 @@ const openxcSchema = new Schema({
     },
     isActiveAt:{
         type : Date,
-        default : Date.now
+       
     },
     role:{
         type: String,
