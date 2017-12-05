@@ -39,7 +39,7 @@ router.get('/userDashboard',ensureAuthenticated, function (req, res, next) {
         var currentdt=new Date();
         var minutagodt=new Date(currentdt - 60000);
         
-        if(data.isActiveAt>minutagodt && data.isActiveAt<currentdt)
+        if(data.isActive==true && (data.isActiveAt>minutagodt && data.isActiveAt<currentdt))
         {
             data.isActive=true;
         }
