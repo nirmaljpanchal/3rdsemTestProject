@@ -21,12 +21,12 @@ router
 
 //*********For Diagnostic Trouble Codes*********/
 router
-    .route('/dtc')
-    .post(ctrlDtc.dtcAddAll)
+    .route('/dtcs')
     .get(ctrlDtc.dtcGetAll)
 
 router
     .route('/dtc/:id')
+    .post(ctrlDtc.dtcAddAll)
     .get(ctrlDtc.dtcGetOne)
 
 
