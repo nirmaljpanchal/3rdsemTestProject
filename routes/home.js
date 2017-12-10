@@ -32,6 +32,28 @@ router.get('/userlist',ensureAuthenticated, function (req, res, next) {
     //res.render('userlist');
 });
 
+router.get('/userDashboard',ensureAuthenticated, function (req, res, next) {
+    
+    userlist.find({username:req.query.id}).then(function (row) {
+        data = row[0];
+        var currentdt=new Date();
+        var minutagodt=new Date(currentdt - 60000);
+        
+        if(data.isActive==true && (data.isActiveAt>minutagodt && data.isActiveAt<currentdt))
+        {
+            data.isActive=true;
+        }
+        else
+        {
+            data.isActive=false;
+        }
+        console.log(data.isActive);
+        res.render('userDashboard', { UserModel: data,user:req.user });
+        
+    })
+    //res.render('userlist');
+});
+
 router.get('/rpmlist',ensureAuthenticated, function (req, res, next) {
     var data = {
         "Data": ""

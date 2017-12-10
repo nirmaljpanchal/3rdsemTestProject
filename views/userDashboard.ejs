@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en" class="no-js">
+<head>
+    <% include head %>
+
+</head>
+<body>
+   <% include menu %>
+<div id="wrapper">
+   <% include aside %>
+   <div id="page-content-wrapper">
+    <div class="container-fluid">
+
+        <div class="row title">
+            <div class="col-9 text-truncate">
+                <h3>Dashboard</h3>
+            </div>
+        </div>
+        
+        <div class="row dashboard">
+            <div class="col-dash col-dash-1">
+                <div class="row">
+                    <div class="col-icon"><img src="/img/icon_menu_connection.png" class="icon" /></div>
+                    <div class="col-text">
+                        <h1>vehicle search id</h1>
+                        <p>License plate: <span>3432423434342</span></p>
+                        <p>Identification number: <span>3432423434342</span></p>
+                        <p>OBD standard: <span>3432423434342</span></p>
+                        <p>Last connected: <span>3432423434342</span></p>
+                        <%if (UserModel.isActive) { %>
+                            
+                            <button  class="btn btn-raised btn-success right-btn">Active</button>
+                            <% }else{ %>
+                                <button  class="btn btn-raised btn-warning right-btn">Inactive</button>
+                                <% } %>
+                        <button type="submit" class="btn btn-raised btn-primary right-btn">CONNECT TO THE VEHICLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-dash col-dash-2">
+                <div class="row-icon"><img src="/img/icon_menu_engine_codes.png" class="icon" /></div>
+                <h1>engine codes</h1>
+                <h2>Not Connected</h2>
+            </div>
+            <div class="col-dash col-dash-2">
+                <div class="row-icon"><img src="/img/icon_menu_bluetooth.png" class="icon" /></div>
+                <h1 class="connected">bluetooth</h1>
+                <h2 class="connected">Connected</h2>
+            </div>
+            <div class="col-dash col-dash-2">
+                <div class="row-icon"><img src="/img/icon_menu_sync.png" class="icon" /></div>
+                <h1>another</h1>
+                <h2>Not Connected</h2>
+            </div>
+        </div>
+        
+    </div>
+    
+	 <% include footer %>
+	</div>
+	<!-- /#page-content-wrapper -->
+
+</div>
+	
+
+</body>
+</html>

@@ -287,6 +287,16 @@ a.dark:hover, a.dark:focus {
   margin: 30px 0;
   padding: 15px 0; }
 
+.btn-outline-secondary-light {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.87);
+  border: solid 1px; }
+  .btn-outline-secondary-light:hover {
+    color: white;
+    background-color: #0e4e68;
+    border-color: #0e4e68; }
+
 /* ==========================================================================
 Affix Header
 ========================================================================== */
@@ -336,6 +346,8 @@ section.login-form {
   section.login-form .lost-lbl {
     display: block;
     margin: 20px auto 0 auto; }
+  section.login-form p.signup {
+    color: white; }
   section.login-form form {
     width: 300px;
     margin: 0 auto;
@@ -480,7 +492,83 @@ Desktop
       font-size: 12px; }
     footer .dev {
       padding: 15px;
-      margin: 0 auto; } }
+      margin: 0 auto; }
+
+  /* ==========================================================================
+  Dashboard
+  ========================================================================== */
+  .dashboard .col-dash {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: #bebebe solid 1px;
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    padding: 30px 30px;
+    margin: 0 1%; }
+    .dashboard .col-dash .col-icon {
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      padding: 0;
+      margin: 0 2% 0 0;
+      flex: 0 0 20%;
+      max-width: 20%; }
+      .dashboard .col-dash .col-icon .icon {
+        width: 100%;
+        height: auto; }
+    .dashboard .col-dash .col-text {
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      padding: 0;
+      margin: 0;
+      flex: 0 0 78%;
+      max-width: 78%; }
+      .dashboard .col-dash .col-text p {
+        color: #5a5a5a;
+        font-size: 14px;
+        margin: 5px 0;
+        padding: 0; }
+        .dashboard .col-dash .col-text p span {
+          color: #478ac1; }
+      .dashboard .col-dash .col-text .btn {
+        margin: 20px 0 0 0; }
+    .dashboard .col-dash .row-icon {
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      padding: 0;
+      margin: 0 auto;
+      flex: 0 0 40%;
+      max-width: 40%; }
+      .dashboard .col-dash .row-icon .icon {
+        width: 100%;
+        height: auto; }
+  .dashboard .col-dash-1 {
+    flex: 0 0 32%;
+    max-width: 32%; }
+    .dashboard .col-dash-1 .icon {
+      float: left;
+      margin: 0; }
+    .dashboard .col-dash-1 h1 {
+      margin: 20px 0;
+      font-size: 20px; }
+  .dashboard .col-dash-2 {
+    flex: 0 0 20%;
+    max-width: 20%;
+    text-align: center; }
+    .dashboard .col-dash-2 .icon {
+      margin: 0 auto; }
+    .dashboard .col-dash-2 h1 {
+      margin: 40px 0;
+      font-size: 20px; }
+    .dashboard .col-dash-2 h2 {
+      margin: 40px 0;
+      font-size: 16px;
+      color: #5a5a5a; }
+    .dashboard .col-dash-2 .connected {
+      color: #478ac1; } }
 /* ==========================================================================
 Mobile
 ========================================================================== */
@@ -559,7 +647,6 @@ Mobile
             display: block; }
             aside#sidebar-wrapper nav ul li a img {
               width: 60px;
-              height: 60px;
               display: inline-block;
               margin: 0; }
             aside#sidebar-wrapper nav ul li a h1 {
@@ -577,6 +664,48 @@ Mobile
       margin: 12vw 0 0 0;
       padding: 3.5vw 0 0 0;
       font-size: 4vw;
-      border-top: #bebebe solid 1px; } }
+      border-top: #bebebe solid 1px; }
+
+  /* ==========================================================================
+  Dashboard
+  ========================================================================== */
+  .dashboard .col-dash {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: #bebebe solid 1px;
+    position: relative;
+    width: 80%;
+    min-height: 300px;
+    padding: 30px 30px;
+    margin: 10px auto; }
+    .dashboard .col-dash .col-icon, .dashboard .col-dash .col-text {
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      padding: 0;
+      margin: 0; }
+      .dashboard .col-dash .col-icon p, .dashboard .col-dash .col-text p {
+        color: #5a5a5a;
+        font-size: 14px;
+        margin: 5px 0;
+        padding: 0; }
+        .dashboard .col-dash .col-icon p span, .dashboard .col-dash .col-text p span {
+          color: #478ac1; }
+      .dashboard .col-dash .col-icon .btn, .dashboard .col-dash .col-text .btn {
+        margin: 20px 0 0 0; }
+  .dashboard .col-dash-1, .dashboard .col-dash-2 {
+    text-align: center; }
+    .dashboard .col-dash-1 .icon, .dashboard .col-dash-2 .icon {
+      margin: 0 auto;
+      max-width: 100px; }
+    .dashboard .col-dash-1 h1, .dashboard .col-dash-2 h1 {
+      margin: 40px 0;
+      font-size: 20px; }
+    .dashboard .col-dash-1 h2, .dashboard .col-dash-2 h2 {
+      margin: 40px 0;
+      font-size: 16px;
+      color: #5a5a5a; }
+    .dashboard .col-dash-1 .connected, .dashboard .col-dash-2 .connected {
+      color: #478ac1; } }
 
 /*# sourceMappingURL=styles.css.map */
