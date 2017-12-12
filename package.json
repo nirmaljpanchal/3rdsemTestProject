@@ -26,6 +26,7 @@
     "mongoose-unique-validator": "^1.0.6",
     "passport": "*",
     "passport-http": "*",
+	"xml2js": "*",
     "passport-local": "*"
   }
 }
