@@ -6,7 +6,7 @@ var ctrlECodes = require('../controllers/engineCodes.controllers.js');
 var ctrlFreezeFrame = require('../controllers/freezeFrame.controllers.js');
 var ctrlReadiness = require('../controllers/readinessCodes.controllers.js');
 var ctrlRpm = require('../controllers/rpm.controllers.js');
-
+var ctrlObd = require('../controllers/obd.controllers.js')
 
 //*********For RPM *********/
 router
@@ -27,6 +27,16 @@ router
 router
     .route('/dtc/:id')
     .get(ctrlDtc.dtcGetOne)
+
+
+//*********For Diagnostic Trouble Codes*********/
+router
+    .route('/obd')
+    .post(ctrlObd.obdAddAll)
+    .get(ctrlObd.obdGetAll)
+router
+    .route('/obd/:id')
+    .get(ctrlObd.obdGetOne)
 
 
 //*********For Readiness Codes*********/

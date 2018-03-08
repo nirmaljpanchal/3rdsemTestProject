@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en" class="no-js">
+<head>
+    <% include head %>
+
+</head>
+<body>
+   <% include menu %>
+<div id="wrapper">
+	
+	<aside id="sidebar-wrapper">
+		<nav>
+			<ul>
+				<li>
+					<a href="/home/userlist">
+						<img src="/img/icon_menu_summary.png"/>
+						<h1>USERS</h1>
+					</a>
+				</li>
+				<li>
+					<a href="/home/rpmlist">
+						<img src="/img/icon_menu_diagnostic.png"/>
+						<h1>RPM</h1>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/img/icon_menu_trouble_codes.png"/>
+						<h1>TROUBLE CODES</h1>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.nevisco.com/" target="_blank">
+						<img src="/img/nevisco.png"/>
+						<h1>Nevisco</h1>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</aside>
+		
+		
+   <div id="page-content-wrapper">
+	<div class="container-fluid">
+
+		<div class="row title">
+			<div class="col-9 text-truncate">
+				<h3>OBD</h3>
+			</div>
+			<div class="col-3 text-truncate">
+				<form class="navbar-form" role="search">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search" aria-label="Search for..." aria-describedby="basic-addon2">
+						<span class="input-group-addon" id="basic-addon2"><i class="material-icons">search</i></span>
+					</div>
+				</form>
+			</div>
+		</div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Name</th>
+					<th scope="col">Value</th>
+				</tr>
+			</thead>
+			<tbody>
+			<%UserModel.forEach(function(item) { %>
+			<tr>
+				<td></td>
+			<td>
+			<%= item.name %></td>
+			<td><%= item.value %></td>
+			</tr>
+			<% }); %>
+			
+			</tbody>
+				
+				
+		</table>
+		<script>
+		
+		</script>
+
+	</div>
+    
+	 <% include footer %>
+	</div>
+	<!-- /#page-content-wrapper -->
+
+</div>
+	
+
+</body>
+</html>

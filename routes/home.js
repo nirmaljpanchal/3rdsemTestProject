@@ -3,6 +3,7 @@ const router = express.Router();
 const userlist = require('../models/user');
 const rpmlist = require('../models/rpm');
 const dtclist = require('../models/dtc');
+const obdlist = require('../models/obd');
 var FCM = require('fcm-push');
 
 function ensureAuthenticated(req,res, next){
@@ -63,6 +64,18 @@ router.get('/diagnostic',ensureAuthenticated, function (req, res, next) {
         });
         
     });
+});
+
+router.get('/obd',ensureAuthenticated, function (req, res, next) {
+   
+        
+        var data=obdlist.find().then(function (data) {
+            
+            console.log(data);
+            res.render('obd', { UserModel: data });
+        });
+        
+   
 });
 
 router.get('/rpmlist',ensureAuthenticated, function (req, res, next) {
